@@ -19,16 +19,16 @@ export class CategoryCostController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.categoryCostService.findOne(id);
+    return this.categoryCostService.findOne(+id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateCategoryCostDto: UpdateCategoryCostDto) {
-    return this.categoryCostService.update(id, updateCategoryCostDto);
+    return this.categoryCostService.update(+id, updateCategoryCostDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.categoryCostService.remove(id);
+    return this.categoryCostService.remove(+id);
   }
 }

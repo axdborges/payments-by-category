@@ -28,5 +28,5 @@ export class CreateCostDto {
 
     @IsDefined()
     @IsString()
-    user: string;
+    userId: string;
 }

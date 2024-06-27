@@ -19,16 +19,16 @@ export class CostController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.costService.findOne(+id);
+    return this.costService.findOne(id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateCostDto: UpdateCostDto) {
-    return this.costService.update(+id, updateCostDto);
+    return this.costService.update(id, updateCostDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.costService.remove(+id);
+    return this.costService.remove(id);
   }
 }
