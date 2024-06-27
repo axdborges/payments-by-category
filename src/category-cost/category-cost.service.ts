@@ -16,7 +16,6 @@ export class CategoryCostService {
 
   async findAll() {
     return await this.prisma.categoryCost.findMany()
-    // return `This action returns all categoryCost`;
   }
 
   async findOne(id: number) {
@@ -24,7 +23,7 @@ export class CategoryCostService {
   }
 
   async update(id: number, updateCategoryCostDto: UpdateCategoryCostDto) {
-    return `This action updates a #${id} categoryCost`;
+    return updateCategoryCostDto;
   }
 
   async remove(id: number) {

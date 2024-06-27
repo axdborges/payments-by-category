@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Patch, Post } from '@nestjs/common';
 import { CategoryCostService } from './category-cost.service';
 import { CreateCategoryCostDto } from './dto/create-category-cost.dto';
 import { UpdateCategoryCostDto } from './dto/update-category-cost.dto';
@@ -19,16 +19,16 @@ export class CategoryCostController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.categoryCostService.findOne(+id);
+    return this.categoryCostService.findOne(id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateCategoryCostDto: UpdateCategoryCostDto) {
-    return this.categoryCostService.update(+id, updateCategoryCostDto);
+    return this.categoryCostService.update(id, updateCategoryCostDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.categoryCostService.remove(+id);
+    return this.categoryCostService.remove(id);
   }
 }
