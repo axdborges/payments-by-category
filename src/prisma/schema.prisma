@@ -14,11 +14,11 @@ datasource db {
 }
 
 model User {
-  id             String        @id @default(uuid())
-  email          String        @unique
-  name           String
-  hasIncome      Boolean       @default(false)
-  costs          Cost[]
+  id                String             @id @default(uuid())
+  email             String             @unique
+  name              String
+  hasIncome         Boolean            @default(false)
+  costs             Cost[]
 }
 
 enum CategoryType {
@@ -32,21 +32,21 @@ enum CategoryType {
 }
 
 model CategoryCost {
-  id             String        @id @default(uuid())
-  name           CategoryType
+  id                String             @id @default(uuid())
+  name              CategoryType
   costs Cost[]
 }
 
 model Cost {
-  id             String        @id @default(uuid())
-  name           String
-  amount         Int  
-  origin         String?
-  category       CategoryType
-  categoryId     String
-  categoryCost   CategoryCost  @relation(fields: [categoryId], references: [id])
-  date           DateTime
-  user           User          @relation(fields: [userId], references: [id])
-  userId         String
+  id                String             @id @default(uuid())
+  name              String
+  amount            Int  
+  origin            String?
+  category          CategoryType
+  categoryId        String
+  categoryCost      CategoryCost       @relation(fields: [categoryId], references: [id])
+  date              DateTime
+  user              User               @relation(fields: [userId], references: [id])
+  userId            String
 
 }

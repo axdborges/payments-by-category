@@ -15,7 +15,8 @@ export class CategoryCostService {
   }
 
   async findAll() {
-    return `This action returns all categoryCost`;
+    return await this.prisma.categoryCost.findMany()
+    // return `This action returns all categoryCost`;
   }
 
   async findOne(id: number) {
